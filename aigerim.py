@@ -57,3 +57,5 @@
             total += value
         return total
         ...
+
+        Красотка из Ожета
