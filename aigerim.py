@@ -102,4 +102,33 @@ print(issubclass(Polygon, (list, Polygon)))
 ...
 
 ...
+<<<<<<< HEAD
 7)
+=======
+5) class RomanNumeral:
+
+    """Римская цифра, представленная как строка и число."""
+
+    SYMBOLS = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
+
+    def __init__(self, number):
+        self.value = number
+
+    @classmethod
+    def from_string(cls, string):
+        return cls(cls.roman_to_int(string))
+
+    @staticmethod
+    def roman_to_int(numeral):
+        total = 0
+        for symbol, next_symbol in zip_longest(numeral, numeral[1:]):
+            value = RomanNumeral.SYMBOLS[symbol]
+            next_value = RomanNumeral.SYMBOLS.get(next_symbol, 0)
+            if value < next_value:
+                value = -value
+            total += value
+        return total
+        ...
+
+        Красотка из Ожета
+
